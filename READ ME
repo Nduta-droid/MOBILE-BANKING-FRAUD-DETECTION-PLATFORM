@@ -1,0 +1,23 @@
+# Mobile Banking Fraud Detection Simulation Platform
+
+This project simulates a mobile banking fraud detection system using Flask and a machine learning model. It allows users to enter transaction details and checks for potential fraud based on amount, time score, and location score.
+
+## Features
+- User roles: Admin and Customer
+- Fraud detection using ML (Isolation Forest)
+- SQLite database for user and transaction storage
+- Real-time dashboard for administrators
+- Deployed using Render
+
+## Technologies Used
+- Python, Flask
+- HTML/CSS
+- SQLite
+- scikit-learn
+- Render.com (deployment)
+
+## How to Run Locally
+1. Clone the repo
+2. Create a virtual environment
+3. Install dependencies: `pip install -r requirements.txt`
+4. Run with: `python app.py`

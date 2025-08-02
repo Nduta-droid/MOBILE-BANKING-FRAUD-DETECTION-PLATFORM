@@ -1,0 +1,12 @@
+amount,time_score,location_score,label
+100,0.1,0.2,safe
+9000,0.8,0.9,fraud
+2500,0.5,0.7,fraud
+150,0.2,0.1,safe
+200,0.3,0.5,fraud
+4500,0.4,0.5,safe
+50000,0.2,0.4,fraud
+3400,0.5,0.6,safe
+1000,0.7,0.3,safe
+7000,0.6,0.8,fraud
+800,0.3,0.4,fraud

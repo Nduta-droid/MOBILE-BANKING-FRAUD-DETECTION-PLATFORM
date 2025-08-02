@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: whitesmoke;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+      border: 1px solid lightgray;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: darkslateblue;
+    }
+    input[type=text], input[type=password], button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+    }
+    button {
+      background-color: steelblue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: dodgerblue;
+    }
+    a {
+      text-decoration: none;
+      color: darkcyan;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Login</h2>
+    <form action="/login" method="post" autocomplete="off">
+      <!-- Dummy hidden fields to confuse browser autofill -->
+      <input type="text" name="fakeusernameremembered" style="display:none">
+      <input type="password" name="fakepasswordremembered" style="display:none">
+
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username" required autocomplete="off"><br>
+
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" required autocomplete="new-password"><br>
+
+      <button type="submit">Login</button><br>
+      <p style="text-align: center; margin-top: 20px;">
+        <a href="/signup">Don't have an account? Sign Up</a>
+      </p>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: whitesmoke;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+      border: 1px solid lightgray;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: darkslateblue;
+    }
+    input[type="text"], input[type="email"], input[type="password"], select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+    }
+    button {
+      background-color: steelblue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: dodgerblue;
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .login-link a {
+      text-decoration: none;
+      color: darkcyan;
+    }
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form action="/signup" method="post" autocomplete="off">
+      <!-- Dummy hidden fields to prevent browser autofill -->
+      <input type="text" name="fakeuser" style="display:none">
+      <input type="password" name="fakepass" style="display:none">
+
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required autocomplete="off">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required autocomplete="off">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required autocomplete="new-password">
+
+      <label for="confirm">Confirm Password:</label>
+      <input type="password" id="confirm" name="confirm" required autocomplete="new-password">
+
+      <label for="role">Register As:</label>
+      <select id="role" name="role" required>
+        <option value="customer">Customer</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p class="login-link">Already have an account? <a href="/login">Log In</a></p>
+  </div>
+</body>
+</html>

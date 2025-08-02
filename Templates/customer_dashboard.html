@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fraud Detection Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: whitesmoke;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+      border: 1px solid lightgray;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: darkslateblue;
+      text-align: center;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type=number], button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+    button {
+      background-color: steelblue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: dodgerblue;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body> 
+  <div class="form-container">
+    <h1>Mobile Banking Fraud Detection</h1>
+    <form method="POST" action="/" autocomplete="off">
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" step="any" required>
+
+      <label for="time">Time Score (0–1):</label>
+      <input type="number" id="time" name="time" step="0.01" required>
+
+      <label for="location">Location Score (0–1):</label>
+      <input type="number" id="location" name="location" step="0.01" required>
+
+      <button type="submit">Check Fraud</button>
+    </form>
+
+    {% if result %}
+      <div class="result" style="color: green;">Transaction Status: {{ result }}</div>
+    {% elif error %}
+      <div class="result" style="color: red;">{{ error }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -22,6 +22,12 @@
       text-align: center;
       color: darkslateblue;
     }
+    .flash-messages {
+      color: red;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
     input[type="text"], input[type="email"], input[type="password"], select, button {
       width: 100%;
       padding: 10px;
@@ -55,6 +61,18 @@
 <body>
   <div class="form-container">
     <h2>Sign Up</h2>
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
     <form action="/signup" method="post" autocomplete="off">
       <!-- Dummy hidden fields to prevent browser autofill -->
       <input type="text" name="fakeuser" style="display:none">
@@ -80,6 +98,7 @@
 
       <button type="submit">Sign Up</button>
     </form>
+
     <p class="login-link">Already have an account? <a href="/login">Log In</a></p>
   </div>
 </body>
